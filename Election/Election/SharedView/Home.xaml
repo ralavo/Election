@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Election.SharedView.Home">
+
+  <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="40" Spacing="20"
+    RelativeLayout.WidthConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Width,
+                                Factor=0.5}"
+     RelativeLayout.HeightConstraint=
+         "{ConstraintExpression Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.5}">
+    <Image Source="homepageImage.png" HorizontalOptions="Center"/>
+
+    <StackLayout Orientation="Horizontal" Spacing="25" HorizontalOptions="Center">
+      <Label Text="County"/>
+      <Label Text="Election Type"/>
+    </StackLayout>
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Entry x:Name="CountyEntry" Text="County"/>
+        <Picker x:Name="ElectionTypeEntry" Title="Election Type" SelectedIndex="{Binding Industry}" HorizontalOptions="FillAndExpand">
+        <Picker.Items>
+            <x:String>President</x:String> 
+            <x:String>Governorship</x:String>
+            <x:String>Senate</x:String>
+            <x:String>Representative</x:String>
+        </Picker.Items>
+    </Picker> 
+    </StackLayout>
+
+    <Button x:Name="SubmitBtn" BackgroundColor="Maroon" TextColor="White" Text="Submit" VerticalOptions="Center" BorderRadius="5"/>
+
+  </StackLayout>
+  
+</ContentPage>
