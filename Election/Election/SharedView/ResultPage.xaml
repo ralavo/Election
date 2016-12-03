@@ -10,11 +10,11 @@
 
     <MasterDetailPage.Detail>
       <NavigationPage>
-        <NavigationPage>
+        
           <x:Arguments>
-        <sharedView:Home x:Name="result"/>
+        <sharedView:Result x:Name="result"/>
           </x:Arguments>
-        </NavigationPage>
+        
       </NavigationPage>
       
     </MasterDetailPage.Detail>
