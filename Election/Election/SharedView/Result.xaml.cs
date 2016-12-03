@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Election.SharedView
 {
-    public partial class Result : MasterDetailPage /*ContentPage*/
+    public partial class Result : ContentPage
     {
         public Result()
         {

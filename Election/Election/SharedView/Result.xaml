@@ -1,20 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Election.SharedView.Result">-->
+             x:Class="Election.SharedView.Result">
 
-
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-				  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-				  xmlns:sharedView="clr-namespace:Election.SharedView;assembly=Election"
-				  x:Class="Election.SharedView.Result">
-
-  <MasterDetailPage.Master>
-    <sharedView:MasterPage x:Name="masterPage" />
-  </MasterDetailPage.Master>
-
-  <MasterDetailPage.Detail>
-    <NavigationPage>
       <StackLayout Padding="0,20,0,0">
         <Label Text="Election" 
            FontAttributes="Bold" 
@@ -42,8 +30,6 @@
           </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
-    </NavigationPage>
-<!--</ContentPage>-->
-  </MasterDetailPage.Detail>
-
-</MasterDetailPage>
+   
+</ContentPage>
+  

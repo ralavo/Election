@@ -20,7 +20,7 @@ namespace Election.SharedView
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "Home",
-                IconSource = "contacts.png",
+                IconSource = "home.png",
                 //TargetType = typeof(ContactsPage)
                 TargetType = typeof(Home)
             });

@@ -34,7 +34,7 @@ namespace Election.SharedView
 
             //((Button)sender).Text = model.Type;
 
-            await Navigation.PushModalAsync(new Result());
+            await Navigation.PushModalAsync(new ResultPage());
         }
 
     }

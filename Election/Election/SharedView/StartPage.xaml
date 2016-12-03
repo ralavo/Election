@@ -5,8 +5,7 @@
 				  x:Class="Election.SharedView.StartPage">
   
   <MasterDetailPage.Master>
-    <sharedView:MasterPage x:Name="masterPage" />
-    
+    <sharedView:MasterPage x:Name="masterPage" />   
   </MasterDetailPage.Master>
   
   
