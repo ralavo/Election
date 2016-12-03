@@ -3,7 +3,6 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 x:Class="Election.SharedView.MasterPage"
 			 Padding="0,40,0,0"
-			 Icon="hamburger.png"
 			 Title="Election">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">

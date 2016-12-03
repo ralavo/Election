@@ -4,11 +4,12 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 
+
 using Xamarin.Forms;
 
 namespace Election.SharedModel
 {
-
+  
     public class Election
     {
         public int Id { get; set; }
@@ -44,30 +45,30 @@ namespace Election.SharedModel
         /*
          * Utility method to handle cases where non integer, N/A was used to represent counties where votes are not available.
          */
-        private static int ToInt(string v)
-        {
-            int a;
-            int.TryParse(v, out a);
-            return a;
-        }
+        //private static int ToInt(string v)
+        //{
+        //    int a;
+        //    int.TryParse(v, out a);
+        //    return a;
+        //}
 
-        public static List<KeyValuePair<string, int?>> OrderByVotes(Election election)
-        {
-            var votesArray = new List<KeyValuePair<string, int?>>()
-            {
-                new KeyValuePair<string, int?>(election.DemocraticCand, election.DemocraticVotes),
-                new KeyValuePair<string, int?>(election.RepublicanCand, election.RepublicanVotes),
-                new KeyValuePair<string, int?>(election.ThirdPartyCand, election.ThirdPartyVotes),
-                new KeyValuePair<string, int?>("Other Candidates", election.OtherVotes)
-            };
+        //public static List<KeyValuePair<string, int?>> OrderByVotes(Election election)
+        //{
+        //    var votesArray = new List<KeyValuePair<string, int?>>()
+        //    {
+        //        new KeyValuePair<string, int?>(election.DemocraticCand, election.DemocraticVotes),
+        //        new KeyValuePair<string, int?>(election.RepublicanCand, election.RepublicanVotes),
+        //        new KeyValuePair<string, int?>(election.ThirdPartyCand, election.ThirdPartyVotes),
+        //        new KeyValuePair<string, int?>("Other Candidates", election.OtherVotes)
+        //    };
 
-            var result = votesArray.OrderByDescending(key => key.Value);
+        //    var result = votesArray.OrderByDescending(key => key.Value);
 
-            return result.ToList();
-        }
+        //    return result.ToList();
+        //}
 
-        public Election()
-        { }
+        //public Election()
+        //{ }
 
     }
 

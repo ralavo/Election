@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Election.SharedModel;
 using Xamarin.Forms;
+using Election.Services;
 
 namespace Election.SharedView
 {
@@ -14,14 +15,27 @@ namespace Election.SharedView
         
         public Home()
         {
-        //    SubmitBtn.Clicked += OnSubmit;         //when submit button is clicked
             InitializeComponent();
+            SubmitBtn.Clicked += OnSubmitAsync;
         }
-        /*
-        private void OnSubmit(Object sender, EventArgs e)
+
+
+        async public void OnSubmitAsync(object sender, EventArgs args)
         {
-            //model.County = CountyEntry.Text;
-            //model.Type = (ElectionType?)ElectionTypeEntry.SelectedIndex;   //cast the election index from integer to election typ enum
-        }*/
+            model.County = CountyEntry.Text.ToLower();
+            model.State = StateEntry.Items[StateEntry.SelectedIndex].ToLower();
+            model.Type = ElectionTypeEntry.Items[ElectionTypeEntry.SelectedIndex].ToLower();
+
+            //List<SharedModel.Election> Elect =  await ElectionServices.GetElectionsAsync(model.State, model.County, model.Type);
+
+            //lab1.Text = Elect.First().TotalVotes.ToString();
+            lab2.Text = model.State;
+            lab3.Text = model.Type;
+
+            //((Button)sender).Text = model.Type;
+
+            await Navigation.PushModalAsync(new Result());
+        }
+
     }
 }

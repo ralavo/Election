@@ -23,8 +23,9 @@ namespace Election.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
 
+            LoadApplication(new Election.App());
+            
             return base.FinishedLaunching(app, options);
         }
     }

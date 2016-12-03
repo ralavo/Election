@@ -4,13 +4,18 @@ using System.Linq;
 using System.Text;
 using Election.SharedView;
 using Xamarin.Forms;
+//using Election.SharedModel.Context;
 
 namespace Election
 {
     public class App : Application
     {
+        //public static ElectionDbContext Election { get; private set; }
+
         public App()
         {
+            //Election = new ElectionDbContext(dbPath);
+
             MainPage = new SharedView.StartPage();
         }
 
