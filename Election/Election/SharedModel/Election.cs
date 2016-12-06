@@ -41,35 +41,7 @@ namespace Election.SharedModel
         public string ThirdPartyCand { get; set; }
 
         public int? OtherVotes { get; set; }
-
-        /*
-         * Utility method to handle cases where non integer, N/A was used to represent counties where votes are not available.
-         */
-        //private static int ToInt(string v)
-        //{
-        //    int a;
-        //    int.TryParse(v, out a);
-        //    return a;
-        //}
-
-        //public static List<KeyValuePair<string, int?>> OrderByVotes(Election election)
-        //{
-        //    var votesArray = new List<KeyValuePair<string, int?>>()
-        //    {
-        //        new KeyValuePair<string, int?>(election.DemocraticCand, election.DemocraticVotes),
-        //        new KeyValuePair<string, int?>(election.RepublicanCand, election.RepublicanVotes),
-        //        new KeyValuePair<string, int?>(election.ThirdPartyCand, election.ThirdPartyVotes),
-        //        new KeyValuePair<string, int?>("Other Candidates", election.OtherVotes)
-        //    };
-
-        //    var result = votesArray.OrderByDescending(key => key.Value);
-
-        //    return result.ToList();
-        //}
-
-        //public Election()
-        //{ }
-
+        
     }
 
 }

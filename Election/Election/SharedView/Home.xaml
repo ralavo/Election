@@ -87,7 +87,7 @@
 
       <Picker x:Name="ElectionTypeEntry"
               Title="Election Type"
-              SelectedIndex="{Binding ElectioType}"
+              SelectedIndex="{Binding ElectionType}"
               HorizontalOptions="FillAndExpand">
         <Picker.Items>
           <x:String>President</x:String>

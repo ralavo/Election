@@ -16,11 +16,9 @@ namespace Election.Services
 
             var electionlist = await restclient.GetAsync();
 
-            //var results = electionlist.Where(r => r.State == state && r.AreaName == county && r.TypeOfElection == typename);
+            var results = electionlist.Where(r => r.State.ToLower() == state && r.AreaName.ToLower() == county && r.TypeOfElection.ToLower() == typename);
 
-            //return results.ToList();
-      
-            return electionlist.ToList();
+            return results.ToList();
         }
     }
 }

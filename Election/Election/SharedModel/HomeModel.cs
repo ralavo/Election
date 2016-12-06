@@ -12,7 +12,6 @@ namespace Election.SharedModel
     {
         public string State { get; set; }
         public string County { get; set; }
-        //public ElectionType? Type { get; set; }
         public string Type { get; set; }
     }
 }

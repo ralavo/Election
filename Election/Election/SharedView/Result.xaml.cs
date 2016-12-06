@@ -10,18 +10,13 @@ namespace Election.SharedView
 {
     public partial class Result : ContentPage
     {
-        public Result()
+        public Result(List<SharedModel.Election> elect)
         {
             InitializeComponent();
 
-            List<SharedModel.Election> election = new List<SharedModel.Election>(); //from home xaml
+            List<SharedModel.Election> elections = elect;
 
-            listView.ItemsSource = election;
-
-            
-            // Accomodate iPhone status bar.
-            this.Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5);
-
+            listView.ItemsSource = (IEnumerable<SharedModel.Election>) elections;
         }
     }
 }

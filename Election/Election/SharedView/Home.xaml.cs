@@ -26,15 +26,11 @@ namespace Election.SharedView
             model.State = StateEntry.Items[StateEntry.SelectedIndex].ToLower();
             model.Type = ElectionTypeEntry.Items[ElectionTypeEntry.SelectedIndex].ToLower();
 
-            //List<SharedModel.Election> Elect =  await ElectionServices.GetElectionsAsync(model.State, model.County, model.Type);
+            List<SharedModel.Election> elections =  await ElectionServices.GetElectionsAsync(model.State, model.County, model.Type);
 
-            //lab1.Text = Elect.First().TotalVotes.ToString();
-            lab2.Text = model.State;
-            lab3.Text = model.Type;
-
-            //((Button)sender).Text = model.Type;
-
-            await Navigation.PushModalAsync(new ResultPage());
+            //var result = new Result(elections);
+            //result.BindingContext = elections;
+            await Navigation.PushModalAsync(new Result(elections));
         }
 
     }
