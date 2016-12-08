@@ -7,11 +7,10 @@ using Xamarin.Forms;
 
 namespace Election.SharedView
 {
+    //This class define the property of the Page declared in the MasterPage
     public class MasterPageItem
     {
         public string Title { get; set; }
-
-        public string IconSource { get; set; }
 
         public Type TargetType { get; set; }
     }

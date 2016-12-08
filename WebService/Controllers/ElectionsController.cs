@@ -8,15 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebService.Model;
 using WebService.Models;
 
 namespace WebService.Controllers
 {
     public class ElectionsController : ApiController
     {
-        private ElectionsContext db = new ElectionsContext();
-
+        private electionEntities db = new electionEntities();
+        
         // GET: api/Elections
         public IQueryable<Election> GetElections()
         {
@@ -35,20 +34,5 @@ namespace WebService.Controllers
 
             return Ok(election);
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool ElectionExists(int id)
-        {
-            return db.Elections.Count(e => e.Id == id) > 0;
-        }
-        
     }
 }

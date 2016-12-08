@@ -6,10 +6,17 @@
 			 Title="Election">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="Default" BackgroundColor="Silver">
+      <ListView x:Name="listView" 
+                VerticalOptions="FillAndExpand" 
+                SeparatorVisibility="Default" 
+                BackgroundColor="Silver">
+        
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ImageCell Text="{Binding Title}" TextColor="Maroon" ImageSource="{Binding IconSource}" />
+            
+            <ImageCell Text="{Binding Title}" 
+                       TextColor="Maroon" />
+        
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

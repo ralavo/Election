@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="electionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Elections">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TypeOfElection" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="int" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AreaType" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalVotes" Type="int" />
+          <Property Name="RepublicanVotes" Type="int" />
+          <Property Name="RepublicanCand" Type="nvarchar" MaxLength="255" />
+          <Property Name="DemocraticVotes" Type="int" />
+          <Property Name="DemocraticCand" Type="nvarchar" MaxLength="255" />
+          <Property Name="ThirdParty" Type="nvarchar" MaxLength="255" />
+          <Property Name="ThirdPartyVotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="ThirdPartyCand" Type="nvarchar" MaxLength="255" />
+          <Property Name="OtherVotes" Type="int" />
+        </EntityType>
+        <EntityContainer Name="electionModelStoreContainer">
+          <EntitySet Name="Elections" EntityType="Self.Elections" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="electionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Election">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TypeOfElection" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="Int32" />
+          <Property Name="AreaName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AreaType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalVotes" Type="Int32" />
+          <Property Name="RepublicanVotes" Type="Int32" />
+          <Property Name="RepublicanCand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DemocraticVotes" Type="Int32" />
+          <Property Name="DemocraticCand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdParty" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdPartyVotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ThirdPartyCand" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OtherVotes" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="electionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Elections" EntityType="Self.Election" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="electionModelStoreContainer" CdmEntityContainer="electionEntities">
+          <EntitySetMapping Name="Elections">
+            <EntityTypeMapping TypeName="electionModel.Election">
+              <MappingFragment StoreEntitySet="Elections">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeOfElection" ColumnName="TypeOfElection" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaType" ColumnName="AreaType" />
+                <ScalarProperty Name="TotalVotes" ColumnName="TotalVotes" />
+                <ScalarProperty Name="RepublicanVotes" ColumnName="RepublicanVotes" />
+                <ScalarProperty Name="RepublicanCand" ColumnName="RepublicanCand" />
+                <ScalarProperty Name="DemocraticVotes" ColumnName="DemocraticVotes" />
+                <ScalarProperty Name="DemocraticCand" ColumnName="DemocraticCand" />
+                <ScalarProperty Name="ThirdParty" ColumnName="ThirdParty" />
+                <ScalarProperty Name="ThirdPartyVotes" ColumnName="ThirdPartyVotes" />
+                <ScalarProperty Name="ThirdPartyCand" ColumnName="ThirdPartyCand" />
+                <ScalarProperty Name="OtherVotes" ColumnName="OtherVotes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

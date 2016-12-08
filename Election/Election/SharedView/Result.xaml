@@ -23,14 +23,14 @@
 
     </ResourceDictionary>
   </ContentPage.Resources>
-
-
-
+  
   <StackLayout Padding="0,20,0,0">
-    <Label Text="Election"
+    <Label Text ="Election"
            FontAttributes="Bold"
-           HorizontalOptions="Center" />
-
+           FontSize="Large"
+           TextColor="Silver"
+           HorizontalOptions="Center"/>
+    
     <ListView x:Name="listView">
 
       <ListView.ItemTemplate >
@@ -38,26 +38,51 @@
           <ViewCell>
             <ViewCell.View>
               <StackLayout Padding = "0, 5"
-                               Orientation="Horizontal">
+                           Orientation="Horizontal">
+                
                 <Label Text ="{Binding Date}"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       TextColor="Silver"/>
 
                 <StackLayout Orientation="Vertical">
 
                   <StackLayout Orientation="Horizontal">
-                    <Label Grid.Column="1"
-                           Text="{Binding RepublicanCand}" />
-                    <Label Grid.Column="2"
-                           Text="{Binding RepublicanVotes}"
-                           HorizontalTextAlignment="End" />
+
+                    <Label Text="Rep: "
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding RepublicanCand}"
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding RepublicanVotes}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="Maroon"/>
+                    <Label Text=" Votes"
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                    
                   </StackLayout>
 
                   <StackLayout Orientation="Horizontal">
-                    <Label Grid.Column="1"
-                           Text="{Binding DemocraticCand}" />
-                    <Label Grid.Column="2"
-                           Text="{Binding DemocraticVotes}"
-                           HorizontalTextAlignment="End" />
+
+                    <Label Text="Dem: "
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding DemocraticCand}" 
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding DemocraticVotes}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" 
+                           TextColor="Maroon"/>
+                    <Label Text="Votes"
+                           FontSize="20"
+                           HorizontalTextAlignment="Start"/>
+                      
                   </StackLayout>
 
                 </StackLayout>

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Election.SharedView.Home">
+             x:Class="Election.SharedView.Home"
+             Title="Home">
 
   <StackLayout 
     Orientation="Vertical" 
@@ -19,16 +20,17 @@
     <Image Source="homepageImage.png" HorizontalOptions="Center"/>
 
     <StackLayout Orientation="Horizontal" Spacing="45" HorizontalOptions="Center">
-      <Label Text="State"/>
-      <Label Text="County"/>
-      <Label Text="Election Type"/>
+      <Label Text="State" />
+      <Label Text="County" />
+      <Label Text="Election Type" />
     </StackLayout>
 
-    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
       <Picker x:Name="StateEntry"
               Title="State"
               SelectedIndex="{Binding State}"
-              HorizontalOptions="FillAndExpand">
+              HorizontalOptions="Fill"
+              TextColor="Black">
         <Picker.Items>
           <x:String>Alabama</x:String>
           <x:String>Alaska</x:String>
@@ -83,12 +85,12 @@
         </Picker.Items>
       </Picker>
 
-      <Entry x:Name="CountyEntry" Placeholder="Enter County"/>
+      <Entry x:Name="CountyEntry" Placeholder="Enter County" TextColor="Black"/>
 
       <Picker x:Name="ElectionTypeEntry"
               Title="Election Type"
               SelectedIndex="{Binding ElectionType}"
-              HorizontalOptions="FillAndExpand">
+              HorizontalOptions="Fill">
         <Picker.Items>
           <x:String>President</x:String>
           <x:String>Governorship</x:String>
@@ -104,12 +106,6 @@
             Text="Submit"
             VerticalOptions="Center"
             BorderRadius="5"/>
-
-    <StackLayout Orientation="Horizontal" Spacing="25" HorizontalOptions="Center">
-      <Label x:Name="lab1" Text="x"/>
-      <Label x:Name="lab2" Text="x"/>
-      <Label x:Name="lab3" Text="x"/>
-    </StackLayout>    
 
   </StackLayout>
   

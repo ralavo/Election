@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace Election.SharedView
 {
-    public partial class Documentation : ContentPage
+    public partial class Search : ContentPage
     {
-        public Documentation()
+        public Search()
         {
             InitializeComponent();
         }

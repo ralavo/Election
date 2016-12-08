@@ -8,6 +8,9 @@ using Xamarin.Forms;
 
 namespace Election.SharedView
 {
+    /* Page to display the result of the search of the user
+     * as a listview
+     */
     public partial class Result : ContentPage
     {
         public Result(List<SharedModel.Election> elect)

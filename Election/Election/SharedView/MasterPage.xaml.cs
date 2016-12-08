@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Election.SharedModel;
 using Xamarin.Forms;
 
 namespace Election.SharedView
 {
+    /*Defines the element that will appear in the master page menu
+     */
     public partial class MasterPage : ContentPage
     {
         public ListView ListView { get { return listView; } }
@@ -16,41 +15,20 @@ namespace Election.SharedView
         {
             InitializeComponent();
 
+            //define the list of element in the masterPageItem
             var masterPageItems = new List<MasterPageItem>();
             masterPageItems.Add(new MasterPageItem
             {
                 Title = "Home",
-                IconSource = "home.png",
-                //TargetType = typeof(ContactsPage)
                 TargetType = typeof(Home)
             });
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "API",
-                IconSource = "api.png",
-                TargetType = typeof(API)
-            });
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "Documentation",
-                IconSource = "documentation.png",
-                TargetType = typeof(Documentation)
-            });
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "Register",
-                IconSource = "register.png",
-                TargetType = typeof(Register)
-            });
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "Log In",
-                IconSource = "login.png",
-                TargetType = typeof(Login)
+                Title = "Search",
+                TargetType = typeof(Search)
             });
 
             listView.ItemsSource = masterPageItems;
         }
     }
-
 }
